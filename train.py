@@ -60,6 +60,17 @@ model = xgb.XGBClassifier(
 
 model = model.fit(X_train, y_train)
 
+# Train
+
+y_train_pred_prob = model.predict_proba(X_train)[:, 1]
+y_train_pred = (y_train_pred_prob >= 0.25)
+
+f1_train = f1_score(y_train, y_train_pred, average = 'macro')
+print('f1 train:', round(f1_train*100, 2))
+
+
+# Val
+
 y_val_pred_prob = model.predict_proba(X_val)[:, 1]
 y_val_pred = (y_val_pred_prob >= 0.25)
 

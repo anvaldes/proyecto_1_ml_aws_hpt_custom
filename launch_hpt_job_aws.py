@@ -7,7 +7,7 @@ from sagemaker.tuner import (
 )
 
 # Config
-job_name = "xgboost-hpt-custom-104"
+job_name = "xgboost-hpt-custom-105"
 bucket = "proyecto-1-ml"
 output_path = f"s3://{bucket}/output"
 region = "us-east-1"
